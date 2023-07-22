@@ -1,0 +1,97 @@
+.sector {
+  padding: 10rem;
+
+  h2 {
+    font-size: 26rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 14rem;
+    text-align: center;
+    margin-bottom: 20rem;
+  }
+
+  &__types {
+    display: grid;
+  }
+
+  &__wrap {
+    display: grid;
+    margin-bottom: 15rem;
+  }
+
+  &__picture {
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    filter: brightness(30%);
+
+    img {
+      width: 100%; //this ensures the image grows as the size of the page increases
+    }
+  }
+
+  &__name {
+    //this makes sure the name of the sector is on the images it as in the design. The share the dame grid dim
+    grid-row: 1/2;
+    grid-column: 1/2;
+    align-self: center;
+
+    z-index: 1; // to bring it from the back to the fore
+    font-family: "OpenSans ExtraBold";
+    color: var(--light);
+    font-size: 26rem;
+    text-align: center;
+  }
+
+  &__browse {
+    border: 1px var(--beta) solid;
+    padding: 10rem;
+    border-radius: 5rem;
+    text-align: center;
+    color: var(--beta);
+    margin-bottom: 15rem;
+  }
+
+  &__mlist,
+  &__list {
+    //display: none;
+    font-size: 17rem;
+    span {
+      color: var(--beta);
+      font-size: 14rem;
+    }
+    li {
+      margin-top: 8rem;
+    }
+  }
+
+  &__list {
+    display: none;
+  }
+
+  @include respond-to("small") {
+    h2 {
+      font-size: 34rem;
+    }
+
+    p {
+      font-size: 18rem;
+    }
+
+    &__types {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 10rem;
+    }
+
+    &__browse,
+    &__mlist {
+      display: none;
+    }
+
+    &__list {
+      display: block;
+    }
+  }
+}
